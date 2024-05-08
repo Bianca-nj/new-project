@@ -43,6 +43,23 @@
 <br>
 <a href="dashboard.html" class="btn" target="_parent"> log in</a><br>
 <p><i>forgot password</p></i>
+        <script>
+    document.getElementById("email").addEventListener("input", validateForm);
+    document.getElementById("password").addEventListener("input", validateForm);
+
+    function validateForm() {
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var loginBtn = document.getElementById("loginBtn");
+
+        if (email.trim() !== "" && password.trim() !== "") {
+            loginBtn.disabled = false;
+        } else {
+            loginBtn.disabled = true;
+        }
+    }
+</script>
+
 </div>
 </body>
 </html>
