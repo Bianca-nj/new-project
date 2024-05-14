@@ -34,33 +34,62 @@
     <div class="container">
         <p><b>Sign up for</b></p>
         <h1>My website</h1>
-    <form>
+    <form id="signupForm">
         <label>Last Name</label><br>
-        <input type="text"><br>
+        <input type="text" id="lastName" required><br>
 
         <label>First Name</label><br>
-        <input type="text"><br>
+        <input type="text" id="firstName" required><br>
 
         <label>Second Name</label><br>
-        <input type="text"><br>
+        <input type="text" id="secondName"><br>
                 
         <label>Email address</label><br>
-        <input type="email"><br>
+        <input type="email" id="email" required><br>
 
         <label>Phone number</label><br>
-        <input type="tel"><br>
+        <input type="tel" id="phone" required><br>
 
         <label>Password</label><br>
-        <input type="password"><br>
+        <input type="password" id="password" required><br>
 
-        <label>Confrim password</label><br>
-        <input type="password"><br>
+        <label>Confirm password</label><br>
+        <input type="password" id="confirmPassword" required><br>
+        
 
-        <input type="checkbox">
+        <input type="checkbox" required>
         <label>I agree to the <i>terms and conditions</i></label>
-        <a href="login.html" class="btn">Submit</a>
+        <button type="submit" class="btn">Submit</button>
+    </form>
     </div>
-    
 
+    <script>
+        
+        document.getElementById("signupForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var lastName = document.getElementById("lastName").value;
+            var firstName = document.getElementById("firstName").value;
+            var secondName = document.getElementById("secondName").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+
+            if (lastName.trim() === "" || firstName.trim() === "" || email.trim() === "" || phone.trim() === "" || password.trim() === "" || confirmPassword.trim() === "") {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return;
+            }
+            window.location.href = "login.html";
+            // Here you can add code to submit the form or perform further actions
+            // For example, you can send an AJAX request to the server to process the form data
+            // Once the form is successfully submitted, you can redirect the user to another page
+        });
+    </script>
 </body>
 </html>

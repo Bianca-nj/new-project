@@ -5,137 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        .icon-dark {
-            color: grey;
-        }
-        .sidebar {
-            height: 100%;
-            width: 115px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background-color: plum;
-            padding-top: 20px;
-        }
-       
-        li {
-            padding: 1rem;
-            margin: 8px 0;
-            border-radius: 8px;
-            color: black;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-        li:hover {
-            background-color: lightpink;
-        }
-        .logout {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-        }
-        .sidebar li.active {
-            background-color: cornsilk;
-            color: blue;
-        }
-        .header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-left: 115px; /* Adjusted margin-left to accommodate the sidebar */
-        }
-        .search-container {
-            display: flex;
-            align-items: center;
-        }
-        .search-bar {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 300px;
-            font-size: 16px;
-            outline: none;
-        }
-        .search-button {
-            background-color: #007bff;
-            border: none;
-            border-radius: 5px;
-            padding: 10px;
-            margin-left: 5px;
-            cursor: pointer;
-            outline: none;
-        }
-        .search-button i {
-            color: #fff;
-        }
-        .profile-icon {
-            font-size: 24px;
-            margin-right: 20px;
-            cursor: pointer;
-        }
-        h2 {
-            margin-left: 115px;
-        } 
-        h3{margin-left: 115px;
-        }
-        .box {
-            width: 100px;
-            height: 100px;
-            margin: 10px;
-            float: left;
-            padding: 10px;
-            margin-left: 115px;
-            text-align: center;
-            border-radius: 10px;
-        }
-        .box1{background-color: lightskyblue;}
-        .box2{background-color: coral;}
-        .box3{background-color: rgb(171, 144, 223);}
-        .clearfix::after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-        .btn {
-            color: black;
-            text-decoration: none;
-        }
-        .container {
-      max-width: 500px;
-      margin: 20px auto;
-      padding: 92px;
-      background-color: beige;
-      border-radius: 10px;
-      text-align: center;
-      margin-left: 115px;
-    }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="sidebar">
         <h1>My website</h1>
-        <li class="active">
+        <li class="active" onclick="toggleTab(this)">
             <i class="icon-dark fas fa-home"></i>Dashboard
         </li>
-        <li>
+        <li onclick="toggleTab(this)">
             <i class="icon-dark fas fa-file"></i>
             Content
         </li>
-        <li>
+        <li onclick="toggleTab(this)">
             <i class="icon-dark fas fa-thumbs-up"></i>
             Likes
         </li>
-        <li>
+        <li onclick="toggleTab(this)">
             <i class="icon-dark fas fa-comment"></i>
             Comment
         </li>
-        <li>
+        <li onclick="toggleTab(this)">
             <i class="icon-dark fas fa-share"></i>
             Share
         </li>
@@ -150,7 +40,9 @@
             <input type="text" placeholder="Search..." class="search-bar">
             <button class="search-button"><i class="fas fa-search"></i></button>
         </div>
-        <span class="profile-icon"><i class="fas fa-user-circle"></i></span>
+        <span class="profile-icon" onclick="toggleProfile()">
+            <i class="fas fa-user-circle"></i> My Profile
+        </span>
     </div>
     <h2><i class="dashboard-icon fas fa-chart-bar"></i> Dashboard</h2>
     <div  class="box box1" ><i class="icon-dark fas fa-thumbs-up"></i><br>Total likes<br>Number</div>
@@ -161,5 +53,24 @@
     <div class="container">
         <p>Recent updates</p>
     </div>
+
+    <script>
+        function toggleTab(tab) {
+    var allTabs = document.querySelectorAll('.sidebar li');
+    allTabs.forEach(function (item) {
+        if (item !== tab) {
+            item.classList.remove('active');
+        } else {
+            item.classList.add('active');
+        }
+    });
+}
+
+function toggleProfile() {
+    var profileIcon = document.querySelector('.profile-icon');
+    profileIcon.classList.toggle('active');
+}
+
+    </script>
 </body>
 </html>
