@@ -76,7 +76,8 @@
             var password = document.getElementById("password").value;
             var confirmPassword = document.getElementById("confirmPassword").value;
 
-            if (lastName.trim() === "" || firstName.trim() === "" || email.trim() === "" || phone.trim() === "" || password.trim() === "" || confirmPassword.trim() === "") {
+            if (lastName.trim() === "" || firstName.trim() === "" || email.trim() === "" || phone.trim() === "" 
+            || password.trim() === "" || confirmPassword.trim() === "") {
                 alert("Please fill in all fields.");
                 return;
             }
@@ -86,9 +87,7 @@
                 return;
             }
             window.location.href = "login.html";
-            // Here you can add code to submit the form or perform further actions
-            // For example, you can send an AJAX request to the server to process the form data
-            // Once the form is successfully submitted, you can redirect the user to another page
+           
         });
     </script>
 </body>

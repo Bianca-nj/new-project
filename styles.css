@@ -37,7 +37,7 @@ li:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 115px; /* Adjusted margin-left to accommodate the sidebar */
+    margin-left: 115px; 
 }
 .search-container {
     display: flex;
@@ -112,13 +112,13 @@ h3 {
     text-align: center;
     margin-left: 115px;
 }
-/* Add styles for the active tab */
+
 .sidebar li.active {
     background-color: cornsilk;
     color: blue;
 }
 
-/* Add styles for the profile icon */
+
 .profile-icon {
     font-size: 24px;
     margin-right: 20px;
@@ -126,5 +126,5 @@ h3 {
 }
 
 .profile-icon.active {
-    color: blue; /* Change color when active */
+    color: blue; 
 }
