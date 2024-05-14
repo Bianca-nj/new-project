@@ -34,43 +34,16 @@
 </head>
 <body>
     <div class="container">
-        <h1>My Website</h1>
-        <form id="loginForm">
-            <label>Email address</label><br>
-            <input type="email" id="email" required><br><br>
-            <label>Password</label><br>
-            <input type="password" id="password" required><br>
-            <button type="submit" class="btn">Log in</button><br>
-        </form>
-        <p id="forgotPassword"><i>Forgot password</i></p>
-    </div>
-
-    <script>
-        document.getElementById("loginForm").addEventListener("submit", function(event) {
-            // Prevent the default form submission behavior
-            event.preventDefault();
-            
-            // Perform form validation
-            var email = document.getElementById("email").value;
-            var password = document.getElementById("password").value;
-
-            if (email.trim() === "" || password.trim() === "") {
-                alert("Please fill in both email and password.");
-                return;
-            }
-
-            // Redirect to the dashboard page
-            window.location.href = "dashboard.html";
-        });
-
-        // Implement forgot password feature
-        document.getElementById("forgotPassword").addEventListener("click", function() {
-            var email = prompt("Enter your email address:");
-            if (email) {
-                // Here you would send a password reset email to the provided email address
-                alert("A password reset email has been sent to " + email + ".");
-            }
-        });
-    </script>
+<h1>My Website</h1>
+<form>
+    <label>email address</label><br>
+    <input type="email"><br><br>
+    <label>password</label><br>
+    <input type="password"><br>
+</form>
+<br>
+<a href="dashboard.html" class="btn" target="_parent"> log in</a><br>
+<p><i>forgot password</p></i>
+</div>
 </body>
 </html>
